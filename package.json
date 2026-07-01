@@ -1,0 +1,28 @@
+{
+  "name": "pomodoro-timer",
+  "version": "1.0.0",
+  "description": "🍅 番茄钟桌面应用 — 用 Claude Code 从零构建的第一个 AI 协作实验项目 | Vue 3 + Electron | 5套精调主题 | SVG 发光进度环",
+  "main": "electron/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jian1202/pomodoro-timer.git"
+  },
+  "keywords": ["pomodoro", "tomato-timer", "electron", "vue3", "claude-code", "ai-experiment"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "Jian1202",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.5.39"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.7",
+    "electron": "^43.0.0",
+    "vite": "^8.1.2",
+    "vite-plugin-electron": "^1.1.0",
+    "vite-plugin-electron-renderer": "^1.0.0"
+  }
+}

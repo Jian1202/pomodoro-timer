@@ -1,0 +1,155 @@
+/* ==========================================
+   番茄钟 — 全局样式 & 5 套色彩主题
+   ========================================== */
+
+/* ===== 全局重置 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Microsoft YaHei', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+}
+
+/* ===== 主题 1：暗夜红 (Crimson Night) ===== */
+:root, :root[data-theme="crimson"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-gradient: radial-gradient(ellipse at 50% 30%, #1f1f3a 0%, #0f0f23 100%);
+  --text-primary: #eee;
+  --text-secondary: #8a8aa0;
+  --color-work: #e94560;
+  --color-break: #2ed573;
+  --ring-bg: rgba(255, 255, 255, 0.08);
+  --ring-glow-work: 0 0 20px rgba(233, 69, 96, 0.6), 0 0 60px rgba(233, 69, 96, 0.2);
+  --ring-glow-break: 0 0 20px rgba(46, 213, 115, 0.6), 0 0 60px rgba(46, 213, 115, 0.2);
+  --panel-bg: rgba(22, 33, 62, 0.97);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.08);
+  --btn-secondary-border: rgba(255, 255, 255, 0.12);
+  --overlay-bg: rgba(0, 0, 0, 0.4);
+  --dot-empty: rgba(255, 255, 255, 0.12);
+  --btn-primary-shadow: 0 4px 20px rgba(233, 69, 96, 0.35);
+  --btn-primary-shadow-hover: 0 6px 28px rgba(233, 69, 96, 0.55);
+  --btn-hover-bg: rgba(255, 255, 255, 0.18);
+  --badge-work-bg: rgba(233, 69, 96, 0.12);
+  --badge-break-bg: rgba(46, 213, 115, 0.12);
+}
+
+/* ===== 主题 2：深海蓝 (Deep Ocean) ===== */
+:root[data-theme="ocean"] {
+  --bg-primary: #0f2027;
+  --bg-secondary: #162c35;
+  --bg-gradient: radial-gradient(ellipse at 50% 30%, #1a3a4a 0%, #09161c 100%);
+  --text-primary: #e0f0f8;
+  --text-secondary: #6b8a9e;
+  --color-work: #00d2ff;
+  --color-break: #3a7bd5;
+  --ring-bg: rgba(255, 255, 255, 0.06);
+  --ring-glow-work: 0 0 20px rgba(0, 210, 255, 0.5), 0 0 60px rgba(0, 210, 255, 0.15);
+  --ring-glow-break: 0 0 20px rgba(58, 123, 213, 0.5), 0 0 60px rgba(58, 123, 213, 0.15);
+  --panel-bg: rgba(22, 44, 53, 0.97);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.06);
+  --btn-secondary-border: rgba(255, 255, 255, 0.1);
+  --overlay-bg: rgba(0, 0, 0, 0.45);
+  --dot-empty: rgba(255, 255, 255, 0.1);
+  --btn-primary-shadow: 0 4px 20px rgba(0, 210, 255, 0.35);
+  --btn-primary-shadow-hover: 0 6px 28px rgba(0, 210, 255, 0.55);
+  --btn-hover-bg: rgba(255, 255, 255, 0.18);
+  --badge-work-bg: rgba(0, 210, 255, 0.12);
+  --badge-break-bg: rgba(58, 123, 213, 0.12);
+}
+
+/* ===== 主题 3：森林绿 (Forest) ===== */
+:root[data-theme="forest"] {
+  --bg-primary: #1a2e1a;
+  --bg-secondary: #1f331f;
+  --bg-gradient: radial-gradient(ellipse at 50% 30%, #1f3a1f 0%, #0f1a0f 100%);
+  --text-primary: #e8f0e0;
+  --text-secondary: #7a9a6a;
+  --color-work: #00b894;
+  --color-break: #a3cb38;
+  --ring-bg: rgba(255, 255, 255, 0.06);
+  --ring-glow-work: 0 0 20px rgba(0, 184, 148, 0.5), 0 0 60px rgba(0, 184, 148, 0.15);
+  --ring-glow-break: 0 0 20px rgba(163, 203, 56, 0.5), 0 0 60px rgba(163, 203, 56, 0.15);
+  --panel-bg: rgba(31, 51, 31, 0.97);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.06);
+  --btn-secondary-border: rgba(255, 255, 255, 0.1);
+  --overlay-bg: rgba(0, 0, 0, 0.45);
+  --dot-empty: rgba(255, 255, 255, 0.1);
+  --btn-primary-shadow: 0 4px 20px rgba(0, 184, 148, 0.35);
+  --btn-primary-shadow-hover: 0 6px 28px rgba(0, 184, 148, 0.55);
+  --btn-hover-bg: rgba(255, 255, 255, 0.18);
+  --badge-work-bg: rgba(0, 184, 148, 0.12);
+  --badge-break-bg: rgba(163, 203, 56, 0.12);
+}
+
+/* ===== 主题 4：落日橙 (Sunset) ===== */
+:root[data-theme="sunset"] {
+  --bg-primary: #2c1810;
+  --bg-secondary: #352018;
+  --bg-gradient: radial-gradient(ellipse at 50% 30%, #3d2218 0%, #1a0e08 100%);
+  --text-primary: #f5e6d8;
+  --text-secondary: #a08070;
+  --color-work: #f39c12;
+  --color-break: #8e44ad;
+  --ring-bg: rgba(255, 255, 255, 0.06);
+  --ring-glow-work: 0 0 20px rgba(243, 156, 18, 0.5), 0 0 60px rgba(243, 156, 18, 0.15);
+  --ring-glow-break: 0 0 20px rgba(142, 68, 173, 0.5), 0 0 60px rgba(142, 68, 173, 0.15);
+  --panel-bg: rgba(53, 32, 24, 0.97);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.06);
+  --btn-secondary-border: rgba(255, 255, 255, 0.1);
+  --overlay-bg: rgba(0, 0, 0, 0.45);
+  --dot-empty: rgba(255, 255, 255, 0.1);
+  --btn-primary-shadow: 0 4px 20px rgba(243, 156, 18, 0.35);
+  --btn-primary-shadow-hover: 0 6px 28px rgba(243, 156, 18, 0.55);
+  --btn-hover-bg: rgba(255, 255, 255, 0.18);
+  --badge-work-bg: rgba(243, 156, 18, 0.12);
+  --badge-break-bg: rgba(142, 68, 173, 0.12);
+}
+
+/* ===== 主题 5：暖阳 (Warm Light) ===== */
+:root[data-theme="light"] {
+  --bg-primary: #F7F2EC;
+  --bg-secondary: #EAE3DB;
+  --bg-gradient: radial-gradient(ellipse at 50% 30%, #FDF9F5 0%, #F1E8E0 100%);
+  --text-primary: #6F655E;
+  --text-secondary: #8A7E76;
+  --color-work: #C65A4A;
+  --color-break: #8BA89A;
+  --ring-bg: #E5E0DA;
+  --ring-glow-work: 0 0 20px rgba(198, 90, 74, 0.25), 0 0 50px rgba(198, 90, 74, 0.08);
+  --ring-glow-break: 0 0 20px rgba(139, 168, 154, 0.25), 0 0 50px rgba(139, 168, 154, 0.08);
+  --panel-bg: rgba(247, 242, 236, 0.98);
+  --btn-secondary-bg: #EAE3DB;
+  --btn-secondary-border: #E5E0DA;
+  --overlay-bg: rgba(111, 101, 94, 0.15);
+  --dot-empty: #E5E0DA;
+  --btn-primary-shadow: 0 4px 20px rgba(198, 90, 74, 0.2);
+  --btn-primary-shadow-hover: 0 6px 28px rgba(198, 90, 74, 0.35);
+  --btn-hover-bg: rgba(0, 0, 0, 0.06);
+  --badge-work-bg: rgba(198, 90, 74, 0.12);
+  --badge-break-bg: rgba(139, 168, 154, 0.12);
+}
+
+/* ===== 全局过渡 ===== */
+body {
+  background: var(--bg-gradient);
+}
