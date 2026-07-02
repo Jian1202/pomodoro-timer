@@ -7,7 +7,7 @@ const themeMeta = {
   ocean:   { name: '深海蓝', icon: '🌊', work: '#00d2ff', break: '#3a7bd5', bg: '#0f2027' },
   forest:  { name: '森林绿', icon: '🌿', work: '#00b894', break: '#a3cb38', bg: '#1a2e1a' },
   sunset:  { name: '落日橙', icon: '🌅', work: '#f39c12', break: '#8e44ad', bg: '#2c1810' },
-  light:   { name: '暖阳',   icon: '🌤️', work: '#C65A4A', break: '#8BA89A', bg: '#F7F2EC' },
+  light:   { name: '暖阳',   icon: '🌤️', work: '#4A5FC6', break: '#6AAD8E', bg: '#F7F2EC' },
 }
 
 const THEMES = Object.keys(themeMeta)

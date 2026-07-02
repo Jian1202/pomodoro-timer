@@ -11,18 +11,12 @@ const props = defineProps({
 const radius = 140
 const circumference = 2 * Math.PI * radius
 
+// 12 条钟面刻度（模拟时钟），内圈 r=130
 const tickRadius = 130
 const tickCircumference = 2 * Math.PI * tickRadius
-
-const trailRadius = 150
-const trailCircumference = 2 * Math.PI * trailRadius
+const TICK_COUNT = 12
 
 const dashOffset = computed(() => circumference * (1 - props.progress))
-
-const trailDashOffset = computed(() => {
-  const trailProgress = Math.min(props.progress + 0.03, 1)
-  return trailCircumference * (1 - trailProgress)
-})
 
 const ringColor = computed(() =>
   props.sessionType === 'work' ? 'var(--color-work)' : 'var(--color-break)'
@@ -35,10 +29,6 @@ const isUrgent = computed(() =>
 
 const currentRingColor = computed(() =>
   isUrgent.value ? 'var(--ring-urgency-color)' : ringColor.value
-)
-
-const textGlowVar = computed(() =>
-  props.sessionType === 'work' ? 'var(--text-glow-work)' : 'var(--text-glow-break)'
 )
 </script>
 
@@ -68,27 +58,14 @@ const textGlowVar = computed(() =>
         stroke-width="10"
       />
 
-      <!-- 刻度线：60 条短线 -->
+      <!-- 12 条钟面刻度 -->
       <circle class="ring-ticks"
         cx="160" cy="160" :r="tickRadius"
         fill="none"
         stroke="var(--ring-tick-color)"
         stroke-width="4"
         stroke-linecap="round"
-        :stroke-dasharray="`2 ${tickCircumference / 60 - 2}`"
-        transform="rotate(-90 160 160)"
-      />
-
-      <!-- 尾迹环（外圈跟随） -->
-      <circle class="ring-trail"
-        cx="160" cy="160" :r="trailRadius"
-        fill="none"
-        stroke="var(--ring-trail-bg)"
-        stroke-width="3"
-        stroke-linecap="round"
-        :stroke-dasharray="trailCircumference"
-        :stroke-dashoffset="trailDashOffset"
-        :filter="isRunning ? 'url(#glow)' : 'none'"
+        :stroke-dasharray="`3 ${tickCircumference / TICK_COUNT - 3}`"
         transform="rotate(-90 160 160)"
       />
 
@@ -106,11 +83,7 @@ const textGlowVar = computed(() =>
       />
     </svg>
 
-    <div
-      class="time-text"
-      :class="{ paused: !isRunning }"
-      :style="isRunning ? { '--text-glow': textGlowVar } : {}"
-    >
+    <div class="time-text" :class="{ paused: !isRunning }">
       {{ formattedTime }}
     </div>
   </div>
@@ -125,11 +98,6 @@ const textGlowVar = computed(() =>
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
-  transition: transform 0.3s ease;
-}
-
-.timer-display:hover {
-  transform: scale(1.02);
 }
 
 .progress-ring {
@@ -141,53 +109,43 @@ const textGlowVar = computed(() =>
 }
 
 .ring-bg {
-  opacity: 0.12;
+  opacity: 0.1;
 }
 
 .ring-ticks {
-  opacity: 0.3;
-}
-
-.ring-trail {
-  opacity: 0.4;
-  transition: stroke-dashoffset 1.2s linear;
+  opacity: 0.25;
 }
 
 .ring-progress {
   transition: stroke-dashoffset 1s linear, stroke 0.5s ease;
 }
 
-/* 运行时脉冲 */
+/* 运行时：仅进度环呼吸，不动文字 */
 .timer-display.running .ring-progress {
   animation: ringPulse 2s ease-in-out infinite;
 }
 
-/* 运行时文字发光呼吸 */
-.timer-display.running .time-text {
-  animation: textGlow 2s ease-in-out infinite;
-}
-
-/* 紧迫模式 */
+/* 紧迫模式：环 + 文字同步加速 */
 .timer-display.urgent .ring-progress {
   animation: urgentPulse 0.8s ease-in-out infinite;
 }
 
 .timer-display.urgent .time-text {
   color: var(--ring-urgency-color);
-  animation: urgentPulse 0.8s ease-in-out infinite;
 }
 
 .time-text {
   font-size: 62px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 5px;
+  font-feature-settings: "tnum";
+  letter-spacing: 0.08em;
   color: var(--text-primary);
   transition: color 0.4s ease;
   z-index: 1;
 }
 
 .time-text.paused {
-  opacity: 0.75;
+  opacity: 0.6;
 }
 </style>

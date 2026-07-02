@@ -156,27 +156,27 @@ body {
   --bg-gradient: radial-gradient(ellipse at 50% 30%, #FDF9F5 0%, #F1E8E0 100%);
   --text-primary: #6F655E;
   --text-secondary: #8A7E76;
-  --color-work: #C65A4A;
-  --color-break: #8BA89A;
+  --color-work: #4A5FC6;
+  --color-break: #6AAD8E;
   --ring-bg: #E5E0DA;
-  --ring-glow-work: 0 0 20px rgba(198, 90, 74, 0.25), 0 0 50px rgba(198, 90, 74, 0.08);
-  --ring-glow-break: 0 0 20px rgba(139, 168, 154, 0.25), 0 0 50px rgba(139, 168, 154, 0.08);
+  --ring-glow-work: 0 0 20px rgba(74, 95, 198, 0.25), 0 0 50px rgba(74, 95, 198, 0.08);
+  --ring-glow-break: 0 0 20px rgba(106, 173, 142, 0.25), 0 0 50px rgba(106, 173, 142, 0.08);
   --panel-bg: rgba(247, 242, 236, 0.98);
   --btn-secondary-bg: #EAE3DB;
   --btn-secondary-border: #E5E0DA;
   --overlay-bg: rgba(111, 101, 94, 0.15);
   --dot-empty: #E5E0DA;
-  --btn-primary-shadow: 0 4px 20px rgba(198, 90, 74, 0.2);
-  --btn-primary-shadow-hover: 0 6px 28px rgba(198, 90, 74, 0.35);
+  --btn-primary-shadow: 0 4px 20px rgba(74, 95, 198, 0.2);
+  --btn-primary-shadow-hover: 0 6px 28px rgba(74, 95, 198, 0.35);
   --btn-hover-bg: rgba(0, 0, 0, 0.06);
-  --badge-work-bg: rgba(198, 90, 74, 0.12);
-  --badge-break-bg: rgba(139, 168, 154, 0.12);
+  --badge-work-bg: rgba(74, 95, 198, 0.12);
+  --badge-break-bg: rgba(106, 173, 142, 0.12);
   --ring-tick-color: rgba(0, 0, 0, 0.08);
   --ring-urgency-color: #e74c3c;
-  --ring-trail-bg: rgba(198, 90, 74, 0.18);
+  --ring-trail-bg: rgba(74, 95, 198, 0.18);
   --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  --text-glow-work: 0 0 10px rgba(198, 90, 74, 0.2);
-  --text-glow-break: 0 0 10px rgba(139, 168, 154, 0.2);
+  --text-glow-work: 0 0 10px rgba(74, 95, 198, 0.2);
+  --text-glow-break: 0 0 10px rgba(106, 173, 142, 0.2);
 }
 
 /* ===== 关键帧动画 ===== */
@@ -188,11 +188,6 @@ body {
 @keyframes urgentPulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%      { opacity: 0.75; transform: scale(1.03); }
-}
-
-@keyframes textGlow {
-  0%, 100% { text-shadow: var(--text-glow); }
-  50%      { text-shadow: none; }
 }
 
 /* ===== 全局过渡 ===== */

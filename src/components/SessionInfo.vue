@@ -15,7 +15,7 @@ const filledDots = computed(() => {
 </script>
 
 <template>
-  <div class="session-card">
+  <div class="session-info">
     <div class="session-badge" :class="sessionType">
       {{ sessionType === 'work' ? '🔴 专注工作中' : '🟢 休息时间' }}
     </div>
@@ -26,7 +26,7 @@ const filledDots = computed(() => {
         :key="i"
         class="dot"
         :class="{ filled: i <= filledDots }"
-        :style="i <= filledDots ? { opacity: 0.25 + (i - 1) * 0.107 } : {}"
+        :style="i <= filledDots ? { opacity: 0.3 + (i - 1) * 0.1 } : {}"
       ></span>
     </div>
     <div class="completed-info">
@@ -36,21 +36,11 @@ const filledDots = computed(() => {
 </template>
 
 <style scoped>
-.session-card {
-  background: var(--btn-secondary-bg);
-  border: 1px solid var(--btn-secondary-border);
-  border-radius: 16px;
-  padding: 16px 28px 12px;
-  box-shadow: var(--card-shadow);
+.session-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 16px;
-  transition: all 0.3s ease;
-}
-
-.session-card:hover {
-  box-shadow: var(--card-shadow), 0 4px 24px rgba(0, 0, 0, 0.15);
+  margin-bottom: 18px;
 }
 
 .session-badge {
