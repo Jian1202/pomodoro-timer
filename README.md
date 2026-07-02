@@ -44,11 +44,14 @@
 <td width="50%">
 
 ### 🎨 体验增强
-- 🖼️ **SVG 发光进度环**，计时中有光晕呼吸效果
+- 🖼️ **SVG 发光进度环**：60 条刻度线 + 尾迹跟随环 + 双层发光滤镜
+- ⏰ **紧迫模式**：工作最后 10% 进度环变红警告，动画加速
+- 🌈 **主题色完成点阵**：透明度渐变，与当前主题完全协调
 - 🎨 **5 套精调主题**：暗夜红 · 深海蓝 · 森林绿 · 落日橙 · 暖阳
 - ⚙️ **自定义时长**：滑块 + 步进器 + 快捷预设
 - 💾 设置自动持久化到 **localStorage**
 - 🖥️ 窗口可自由缩放
+- ✨ 弹性微交互：按钮回弹、tooltip 提示、卡片 hover 动画
 
 </td>
 </tr>
@@ -68,9 +71,9 @@
 
 ```
  Vue 3 (Composition API)  ───  响应式 UI，SFC <script setup>
- Electron 28+             ───  桌面窗口 + 系统通知
- Vite 5                   ───  极速 HMR 开发体验
- vite-plugin-electron     ───  Vite ↔ Electron 无缝集成
+ Electron 43               ───  桌面窗口 + 系统通知
+ Vite 8                    ───  极速 HMR 开发体验
+ vite-plugin-electron      ───  Vite ↔ Electron 无缝集成
 ```
 
 **架构亮点：**
@@ -137,6 +140,7 @@ pomodoro/
 | Vue Composition API 零上手成本 | 自动化测试覆盖 |
 | 主题系统 CSS 变量方案简洁优雅 | CI/CD 构建流水线 |
 | 4 个 agent 并行 code review 质量高 | 更复杂的跨窗口状态同步 |
+| UI 渐进式优化：刻度环、紧迫模式、弹性动效 | 番茄历史统计图表 |
 
 ---
 
