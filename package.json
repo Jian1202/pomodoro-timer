@@ -1,17 +1,25 @@
 {
   "name": "pomodoro-timer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🍅 番茄钟桌面应用 — 用 Claude Code 从零构建的第一个 AI 协作实验项目 | Vue 3 + Electron | 5套精调主题 | SVG 发光进度环",
-  "main": "electron/main.js",
+  "main": "dist-electron/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Jian1202/pomodoro-timer.git"
   },
-  "keywords": ["pomodoro", "tomato-timer", "electron", "vue3", "claude-code", "ai-experiment"],
+  "keywords": [
+    "pomodoro",
+    "tomato-timer",
+    "electron",
+    "vue3",
+    "claude-code",
+    "ai-experiment"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dist:win": "vite build && electron-builder --win --publish never"
   },
   "author": "Jian1202",
   "license": "MIT",
@@ -21,8 +29,38 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.7",
     "electron": "^43.0.0",
+    "electron-builder": "^26.15.3",
     "vite": "^8.1.2",
     "vite-plugin-electron": "^1.1.0",
     "vite-plugin-electron-renderer": "^1.0.0"
+  },
+  "build": {
+    "appId": "com.jian1202.pomodoro-timer",
+    "productName": "番茄钟",
+    "icon": "public/icon.ico",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "artifactName": "${productName}-${version}-Setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "番茄钟"
+    }
   }
 }
