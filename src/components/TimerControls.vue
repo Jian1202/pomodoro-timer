@@ -60,9 +60,9 @@ function handlePrimary() {
 .btn:active { transform: scale(0.92) !important; }
 
 .btn-primary {
-  background: var(--color-work);
+  background: linear-gradient(135deg, var(--color-work), var(--color-work));
   color: #fff;
-  box-shadow: var(--btn-primary-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: var(--btn-primary-shadow);
 }
 
 .btn-primary:hover {
