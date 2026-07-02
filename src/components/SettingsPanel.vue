@@ -137,6 +137,7 @@ function close() {
   background: var(--panel-bg);
   backdrop-filter: blur(20px);
   border-left: 1px solid var(--btn-secondary-border);
+  box-shadow: -4px 0 40px rgba(0, 0, 0, 0.3);
   padding: 28px 24px;
   overflow-y: auto;
   transform: translateX(100%);
@@ -218,18 +219,32 @@ function close() {
   background: var(--btn-secondary-bg);
   color: var(--text-primary);
   font-size: 13px; font-weight: 500; cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.preset-btn:hover { background: var(--btn-hover-bg); border-color: var(--color-work); }
+.preset-btn:hover {
+  background: var(--btn-hover-bg);
+  border-color: var(--color-work);
+  transform: translateY(-1px);
+}
+.preset-btn:active {
+  transform: scale(0.95);
+}
 .preset-btn small { color: var(--text-secondary); font-size: 11px; }
 
 .theme-grid { display: flex; gap: 10px; flex-wrap: wrap; }
 .theme-card {
   display: flex; flex-direction: column; align-items: center; gap: 6px;
-  cursor: pointer; padding: 4px; border-radius: 8px;
-  transition: all 0.25s; min-width: 50px;
+  cursor: pointer; padding: 6px 4px; border-radius: 10px;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-width: 50px;
 }
-.theme-card:hover { background: rgba(128,128,128,0.1); }
+.theme-card:hover {
+  background: var(--btn-hover-bg);
+  transform: translateY(-2px);
+}
+.theme-card:active {
+  transform: scale(0.95);
+}
 .theme-card.active .theme-label { color: var(--text-primary); font-weight: 600; }
 .theme-dot {
   display: block; width: 32px; height: 32px;

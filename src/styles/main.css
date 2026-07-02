@@ -51,6 +51,12 @@ body {
   --btn-hover-bg: rgba(255, 255, 255, 0.18);
   --badge-work-bg: rgba(233, 69, 96, 0.12);
   --badge-break-bg: rgba(46, 213, 115, 0.12);
+  --ring-tick-color: rgba(255, 255, 255, 0.12);
+  --ring-urgency-color: #ff4757;
+  --ring-trail-bg: rgba(233, 69, 96, 0.25);
+  --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+  --text-glow-work: 0 0 14px rgba(233, 69, 96, 0.5);
+  --text-glow-break: 0 0 14px rgba(46, 213, 115, 0.5);
 }
 
 /* ===== 主题 2：深海蓝 (Deep Ocean) ===== */
@@ -75,6 +81,12 @@ body {
   --btn-hover-bg: rgba(255, 255, 255, 0.18);
   --badge-work-bg: rgba(0, 210, 255, 0.12);
   --badge-break-bg: rgba(58, 123, 213, 0.12);
+  --ring-tick-color: rgba(255, 255, 255, 0.1);
+  --ring-urgency-color: #ff6b7a;
+  --ring-trail-bg: rgba(0, 210, 255, 0.2);
+  --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+  --text-glow-work: 0 0 14px rgba(0, 210, 255, 0.5);
+  --text-glow-break: 0 0 14px rgba(58, 123, 213, 0.5);
 }
 
 /* ===== 主题 3：森林绿 (Forest) ===== */
@@ -99,6 +111,12 @@ body {
   --btn-hover-bg: rgba(255, 255, 255, 0.18);
   --badge-work-bg: rgba(0, 184, 148, 0.12);
   --badge-break-bg: rgba(163, 203, 56, 0.12);
+  --ring-tick-color: rgba(255, 255, 255, 0.1);
+  --ring-urgency-color: #ff6b6b;
+  --ring-trail-bg: rgba(0, 184, 148, 0.2);
+  --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+  --text-glow-work: 0 0 14px rgba(0, 184, 148, 0.5);
+  --text-glow-break: 0 0 14px rgba(163, 203, 56, 0.5);
 }
 
 /* ===== 主题 4：落日橙 (Sunset) ===== */
@@ -123,6 +141,12 @@ body {
   --btn-hover-bg: rgba(255, 255, 255, 0.18);
   --badge-work-bg: rgba(243, 156, 18, 0.12);
   --badge-break-bg: rgba(142, 68, 173, 0.12);
+  --ring-tick-color: rgba(255, 255, 255, 0.1);
+  --ring-urgency-color: #ff6348;
+  --ring-trail-bg: rgba(243, 156, 18, 0.2);
+  --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+  --text-glow-work: 0 0 14px rgba(243, 156, 18, 0.5);
+  --text-glow-break: 0 0 14px rgba(142, 68, 173, 0.5);
 }
 
 /* ===== 主题 5：暖阳 (Warm Light) ===== */
@@ -147,6 +171,28 @@ body {
   --btn-hover-bg: rgba(0, 0, 0, 0.06);
   --badge-work-bg: rgba(198, 90, 74, 0.12);
   --badge-break-bg: rgba(139, 168, 154, 0.12);
+  --ring-tick-color: rgba(0, 0, 0, 0.08);
+  --ring-urgency-color: #e74c3c;
+  --ring-trail-bg: rgba(198, 90, 74, 0.18);
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --text-glow-work: 0 0 10px rgba(198, 90, 74, 0.2);
+  --text-glow-break: 0 0 10px rgba(139, 168, 154, 0.2);
+}
+
+/* ===== 关键帧动画 ===== */
+@keyframes ringPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.82; }
+}
+
+@keyframes urgentPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.75; transform: scale(1.03); }
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: var(--text-glow); }
+  50%      { text-shadow: none; }
 }
 
 /* ===== 全局过渡 ===== */

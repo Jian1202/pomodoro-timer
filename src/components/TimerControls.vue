@@ -50,15 +50,17 @@ function handlePrimary() {
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease,
+              background 0.25s ease;
   outline: none;
   letter-spacing: 1.5px;
 }
 
-.btn:active { transform: scale(0.95); }
+.btn:active { transform: scale(0.92) !important; }
 
 .btn-primary {
-  background: var(--color-work);
+  background: linear-gradient(135deg, var(--color-work), var(--color-work));
   color: #fff;
   box-shadow: var(--btn-primary-shadow);
 }
@@ -86,10 +88,13 @@ function handlePrimary() {
 }
 
 .hint-text {
-  margin-top: 14px;
-  font-size: 12px;
+  margin-top: 18px;
+  font-size: 11px;
   color: var(--text-secondary);
-  opacity: 0.5;
+  opacity: 0.6;
   letter-spacing: 1px;
+  background: var(--btn-secondary-bg);
+  padding: 4px 14px;
+  border-radius: 10px;
 }
 </style>
